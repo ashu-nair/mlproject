@@ -1,1 +1,77 @@
-hii
+# Crop Recommendation System with Weather Integration
+
+A machine learning-powered tool that recommends the **best crop to grow** based on soil nutrients and real-time weather data.
+
+---
+
+##  Project Overview
+
+This project combines:
+- A **RandomForestClassifier** trained on the [Crop Recommendation Dataset](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset) (available in this repo as `Crop_recommendation.csv`).
+- Live weather data from the **Open-Meteo API**.
+
+Users can:
+- Enter input manually or fetch weather based on location (latitude & longitude).
+- Receive suggestions for **crop**, **fertilizer**, and **cultivation tips**.
+- View soil nutrient visualizations including NPK bar charts and a pH level indicator.
+
+---
+
+##  Usage Instructions
+
+1. Launch the notebook `Untitled8.ipynb` in your preferred environment (e.g., Google Colab or JupyterLab).
+
+2. Ensure `Crop_recommendation.csv` is available in the working directory.
+
+3. **Run the notebook**. You will be prompted to choose the input mode:
+   - **Manual mode**: Enter soil (N, P, K, pH) and weather (temperature, humidity, rainfall) values manually.
+   - **Location mode**: Provide latitude & longitude, and the app will fetch temperature, humidity, and rainfall from the Open-Meteo API. Soil parameters must still be entered manually.
+
+4. The notebook will:
+   - Train a Random Forest model (accuracy is logged).
+   - Make a prediction for the recommended crop.
+   - Suggest a balanced fertilizer amount.
+   - Display a helpful cultivation **tip** tailored to the predicted crop.
+   - Generate visualizations: NPK comparison vs. average, and a soil pH gauge.
+
+---
+
+##  Example Output
+Model trained. Accuracy: 0.98
+Choose mode: manual or location? location
+Enter latitude: 9.3986
+Enter longitude: 76.4902
+Nitrogen (kg/ha): 90
+Phosphorus (kg/ha): 42
+Potassium (kg/ha): 43
+Soil pH (0–14): 6.5
+☀ Weather — Temp: 25.6 °C, Humidity: 94%, Rainfall: 200 mm
+
+--- Prediction ---
+Recommended Crop: Rice 🌾
+Fertilizer Suggestion: 58.33 kg/acre (balanced NPK)
+Tip: Maintain 5–7 cm standing water during growth. Apply nitrogen in 3 split doses.
+
+- **Weather API**: Open-Meteo provides current conditions including hourly data.
+- **Libraries Used**: `pandas`, `numpy`, `scikit-learn`, `requests`, `matplotlib`.
+
+---
+
+##  Future Enhancements
+
+- Add **season-aware logic** to filter crops based on current month or growing season.
+- Integrate **additional environmental data** (e.g., soil moisture, day length).
+- Build a **web or mobile interface** for easier access.
+
+---
+
+##  License
+
+This project is released under the **MIT License**.
+
+---
+
+Feel free to copy this directly into your README file. Let me know if you’d like me to customize anything further—like inserting screenshots, usage badges, or contributor info!
+::contentReference[oaicite:0]{index=0}
+
+
